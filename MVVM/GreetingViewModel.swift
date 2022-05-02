@@ -5,10 +5,8 @@
 //  Created by Вячеслав Квашнин on 02.05.2022.
 //
 
-import Foundation
-
 protocol GreetingViewModelProtocol {
-    var greeting: String { get }
+    var greeting: String? { get }
     var greetingDidChange: ((GreetingViewModelProtocol) -> Void)? { get set }
     init(person: Person)
     func showGreeting()
@@ -31,6 +29,4 @@ class GreetingViewModel: GreetingViewModelProtocol {
     func showGreeting() {
         greeting = "Hello \(person.name) \(person.surname)"
     }
-    
-    
 }
